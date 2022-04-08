@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+   
+    <style>.class-table {
+      margin-top: 100px;
+      padding: 40px;
+      border: 1px solid #b8b8b8;
+      border-radius: 10px;
+      box-shadow: 7px 7px 10px rgb(166 166 166 / 50%);
+  }</style>
+</head>
+
+<body>
+    <div class="container">
+
+        
+        <div class="class-table">
+          <div class="row">
+            <div class="col">
+              <h2>{{TEXT}}</h2>
+
+            </div>
+
+          </div>
+          
+
+            <div class="col m-auto">
+
+              <a href="/delete_employee" class="btn btn-primary btn-md"> Delete Employee </a>
+            </div>
+
+            <table class="table">
+
+
+                <thead>
+                  <tr>
+
+                    <th scope="col">ID</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Sick Leave Credits</th>
+                    <th scope="col">Vacation Leave Credits</th>
+                    <th scope="col">Hourly Rate</th>
+                    
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <form action="#" method="POST" class="register-form" id="register-form">
+
+                  <tr>
+                    {% for user in result %}
+                    <th scope="row"><span >{{user[0]}}</span></th>
+                    <td>{{user[1]}}</td>
+                    <td>{{user[2]}}</td>
+                    <td>{{user[3]}}</td>
+                    <td>{{user[4]}}</td>
+                    <td>{{user[5]}}</td>
+                    <td>{{user[6]}}</td>
+                    
+
+                  </tr> 
+
+                  {% endfor %}
+                  <td><input type="text" name="IDs" id="" placeholder="Id"></td>  <td><input type="text" name="VacationCredits" id="" placeholder="Vac"></td> <td><input type="text" name="HourlyRate" id="" placeholder="Hour"></td> <td><input type="text" name="SickCredits" id="" placeholder="Sick"> </td>  <td> <input type="submit" name="" id="signup" class="form-submit" placeholder="Update"/></td>
+                </form>
+                </tbody>
+              </table>
+
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
